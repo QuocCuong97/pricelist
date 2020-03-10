@@ -32,39 +32,45 @@ def get_comvn():
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_com():
-    dom_origin = get_dom(urls)
-    mark_origin = dom_origin.find(class_="k_bgtm k_tmqt").table.tbody
-    reg_origin = mark_origin.contents[1].contents[4].contents[4].text.strip("\n đ").replace('.', '')
-    reg_promotion = mark_origin.contents[1].contents[4].contents[1].text.strip("\n đ").replace('.', '')
-    renew_price = mark_origin.contents[1].contents[6].text.strip("\n đ").replace('.', '')
-    trans_price = mark_origin.contents[1].contents[8].text.strip("\n đ").replace('.', '')
+    dom_origin = get_dom(homepage)
+    mark_origin = dom_origin.find('p', text='.com').parent
+    reg_origin = int(mark_origin.contents[4].text.replace('k', '000')) * 110 // 100
+    reg_promotion = int(mark_origin.contents[3].text.replace('k', '000')) * 110 // 100
+    dom = get_dom(urls)
+    mark = dom.find(class_="k_bgtm k_tmqt").table.tbody
+    renew_price = int(mark.contents[1].contents[6].text.strip("\n đ").replace('.', '')) * 110 // 100
+    trans_price = int(mark.contents[1].contents[8].text.strip("\n đ").replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_net():
-    dom_origin = get_dom(urls)
-    mark_origin = dom_origin.find(class_="k_bgtm k_tmqt").table.tbody
-    reg_origin = mark_origin.contents[5].contents[4].contents[4].text.strip("\n đ").replace('.', '')
-    reg_promotion = mark_origin.contents[5].contents[4].contents[1].text.strip("\n đ").replace('.', '')
-    renew_price = mark_origin.contents[5].contents[6].text.strip("\n đ").replace('.', '')
-    trans_price = mark_origin.contents[5].contents[8].text.strip("\n đ").replace('.', '')
+    dom_origin = get_dom(homepage)
+    mark_origin = dom_origin.find('p', text='.net').parent
+    reg_origin = int(mark_origin.contents[4].text.replace('k', '000')) * 110 // 100
+    reg_promotion = int(mark_origin.contents[3].text.replace('k', '000')) * 110 // 100
+    dom = get_dom(urls)
+    mark = dom.find(class_="k_bgtm k_tmqt").table.tbody
+    renew_price = int(mark.contents[5].contents[6].text.strip("\n đ").replace('.', '')) * 110 // 100
+    trans_price = int(mark.contents[5].contents[8].text.strip("\n đ").replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_org():
     dom_origin = get_dom(urls)
     mark_origin = dom_origin.find(class_="k_bgtm k_tmqt").table.tbody
-    reg_origin = mark_origin.contents[43].contents[4].text.strip("\n đ").replace('.', '')
+    reg_origin = int(mark_origin.contents[43].contents[4].text.strip("\n đ").replace('.', '')) * 110 // 100
     reg_promotion = reg_origin
-    renew_price = mark_origin.contents[43].contents[6].text.strip("\n đ").replace('.', '')
-    trans_price = mark_origin.contents[43].contents[8].text.strip("\n đ").replace('.', '')
+    renew_price = int(mark_origin.contents[43].contents[6].text.strip("\n đ").replace('.', ''))  * 110 // 100
+    trans_price = int(mark_origin.contents[43].contents[8].text.strip("\n đ").replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_info():
-    dom_origin = get_dom(urls)
-    mark_origin = dom_origin.find(class_="k_bgtm k_tmqt").table.tbody
-    reg_origin = mark_origin.contents[7].contents[4].contents[4].text.strip("\n đ").replace('.', '')
-    reg_promotion = mark_origin.contents[7].contents[4].contents[1].text.strip("\n đ").replace('.', '')
-    renew_price = mark_origin.contents[7].contents[6].text.strip("\n đ").replace('.', '')
-    trans_price = mark_origin.contents[7].contents[8].text.strip("\n đ").replace('.', '')
+    dom_origin = get_dom(homepage)
+    mark_origin = dom_origin.find('p', text='.info').parent
+    reg_origin = int(mark_origin.contents[4].text.replace('k', '000')) * 110 // 100
+    reg_promotion = int(mark_origin.contents[3].text.replace('k', '000')) * 110 // 100
+    dom = get_dom(urls)
+    mark = dom.find(class_="k_bgtm k_tmqt").table.tbody
+    renew_price = int(mark.contents[7].contents[6].text.strip("\n đ").replace('.', '')) *110 // 100
+    trans_price = int(mark.contents[7].contents[8].text.strip("\n đ").replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 

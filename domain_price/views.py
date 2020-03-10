@@ -5,12 +5,12 @@ from domain_price.models import Domain, Vendor
 # Create your views here.
 
 def index(request):
-    lst_vn = Domain.objects.all().filter(domain_type='vn').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd')
-    lst_comvn = Domain.objects.all().filter(domain_type='comvn').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd')
-    lst_com = Domain.objects.all().filter(domain_type='com').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd')
-    lst_net = Domain.objects.all().filter(domain_type='net').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd')
-    lst_org = Domain.objects.all().filter(domain_type='org').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd')
-    lst_info = Domain.objects.all().filter(domain_type='info').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd')
+    lst_vn = Domain.objects.all().filter(domain_type='vn').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd', 'note')
+    lst_comvn = Domain.objects.all().filter(domain_type='comvn').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd', 'note')
+    lst_com = Domain.objects.all().filter(domain_type='com').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd', 'note')
+    lst_net = Domain.objects.all().filter(domain_type='net').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd', 'note')
+    lst_org = Domain.objects.all().filter(domain_type='org').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd', 'note')
+    lst_info = Domain.objects.all().filter(domain_type='info').order_by('reg_promotion').values_list('reg_promotion', 'vendor__name', 'vendor__logo', 'vendor__homepage', 'reg_promotion_usd', 'note')
 
     count_vendor_vn = Domain.objects.all().filter(domain_type='vn', reg_promotion__isnull=False).count() - 3
     count_vendor_comvn = Domain.objects.all().filter(domain_type='comvn', reg_promotion__isnull=False).count() - 3
@@ -23,39 +23,40 @@ def index(request):
     lst_second = [lst_com[1], lst_net[1], lst_org[1], lst_info[1], lst_comvn[1], lst_vn[1]]
     lst_third = [lst_com[2], lst_net[2], lst_org[2], lst_info[2], lst_comvn[2], lst_vn[2]]
 
-    lst_com_other = []
-    lst_net_other = []
-    lst_org_other = []
-    lst_info_other = []
-    lst_comvn_other = []
-    lst_vn_other = []
+    # lst_com_other = []
+    # lst_net_other = []
+    # lst_org_other = []
+    # lst_info_other = []
+    # lst_comvn_other = []
+    # lst_vn_other = []
 
-    for x in range(0, count_vendor_com):
-        y = x + 3
-        lst_com_other.append(lst_com[y])
+    # for x in range(0, count_vendor_com):
+    #     y = x + 3
+    #     lst_com_other.append(lst_com[y])
 
-    for x in range(0, count_vendor_net):
-        y = x + 3
-        lst_net_other.append(lst_net[y])
+    # for x in range(0, count_vendor_net):
+    #     y = x + 3
+    #     lst_net_other.append(lst_net[y])
 
-    for x in range(0, count_vendor_org):
-        y = x + 3
-        lst_org_other.append(lst_org[y])
+    # for x in range(0, count_vendor_org):
+    #     y = x + 3
+    #     lst_org_other.append(lst_org[y])
 
-    for x in range(0, count_vendor_info):
-        y = x + 3
-        lst_info_other.append(lst_info[y])
+    # for x in range(0, count_vendor_info):
+    #     y = x + 3
+    #     lst_info_other.append(lst_info[y])
 
-    for x in range(0, count_vendor_comvn):
-        y = x + 3
-        lst_comvn_other.append(lst_comvn[y])
+    # for x in range(0, count_vendor_comvn):
+    #     y = x + 3
+    #     lst_comvn_other.append(lst_comvn[y])
 
-    for x in range(0, count_vendor_vn):
-        y = x + 3
-        lst_vn_other.append(lst_vn[y])
+    # for x in range(0, count_vendor_vn):
+    #     y = x + 3
+    #     lst_vn_other.append(lst_vn[y])
 
     lst_count = [count_vendor_com, count_vendor_net, count_vendor_org, count_vendor_info, count_vendor_comvn, count_vendor_vn]
-    lst_other = [lst_com_other, lst_net_other, lst_org_other, lst_info_other, lst_comvn_other, lst_vn_other]
+    lst_other = [lst_com, lst_net, lst_org, lst_info, lst_comvn, lst_vn]
+    # lst_other = [lst_com_other, lst_net_other, lst_org_other, lst_info_other, lst_comvn_other, lst_vn_other]
 
 #------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -78,39 +79,40 @@ def index(request):
     ren_second = [ren_com[1], ren_net[1], ren_org[1], ren_info[1], ren_comvn[1], ren_vn[1]]
     ren_third = [ren_com[2], ren_net[2], ren_org[2], ren_info[2], ren_comvn[2], ren_vn[2]]
 
-    ren_com_other = []
-    ren_net_other = []
-    ren_org_other = []
-    ren_info_other = []
-    ren_comvn_other = []
-    ren_vn_other = []
+    # ren_com_other = []
+    # ren_net_other = []
+    # ren_org_other = []
+    # ren_info_other = []
+    # ren_comvn_other = []
+    # ren_vn_other = []
 
-    for x in range(0, count_vendor_com_renew):
-        y = x + 3
-        ren_com_other.append(ren_com[y])
+    # for x in range(0, count_vendor_com_renew):
+    #     y = x + 3
+    #     ren_com_other.append(ren_com[y])
 
-    for x in range(0, count_vendor_net_renew):
-        y = x + 3
-        ren_net_other.append(ren_net[y])
+    # for x in range(0, count_vendor_net_renew):
+    #     y = x + 3
+    #     ren_net_other.append(ren_net[y])
 
-    for x in range(0, count_vendor_org_renew):
-        y = x + 3
-        ren_org_other.append(ren_org[y])
+    # for x in range(0, count_vendor_org_renew):
+    #     y = x + 3
+    #     ren_org_other.append(ren_org[y])
 
-    for x in range(0, count_vendor_info_renew):
-        y = x + 3
-        ren_info_other.append(ren_info[y])
+    # for x in range(0, count_vendor_info_renew):
+    #     y = x + 3
+    #     ren_info_other.append(ren_info[y])
 
-    for x in range(0, count_vendor_comvn_renew):
-        y = x + 3
-        ren_comvn_other.append(ren_comvn[y])
+    # for x in range(0, count_vendor_comvn_renew):
+    #     y = x + 3
+    #     ren_comvn_other.append(ren_comvn[y])
 
-    for x in range(0, count_vendor_vn_renew):
-        y = x + 3
-        ren_vn_other.append(ren_vn[y])
+    # for x in range(0, count_vendor_vn_renew):
+    #     y = x + 3
+    #     ren_vn_other.append(ren_vn[y])
 
     ren_count = [count_vendor_com_renew, count_vendor_net_renew, count_vendor_org_renew, count_vendor_info_renew, count_vendor_comvn_renew, count_vendor_vn_renew]
-    ren_other = [ren_com_other, ren_net_other, ren_org_other, ren_info_other, ren_comvn_other, ren_vn_other]
+    ren_other = [ren_com, ren_net, ren_org, ren_info, ren_comvn, ren_vn]
+    # ren_other = [ren_com_other, ren_net_other, ren_org_other, ren_info_other, ren_comvn_other, ren_vn_other]
 
 #------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -133,39 +135,41 @@ def index(request):
     trans_second = [trans_com[1], trans_net[1], trans_org[1], trans_info[1], trans_comvn[1], trans_vn[1]]
     trans_third = [trans_com[2], trans_net[2], trans_org[2], trans_info[2], trans_comvn[2], trans_vn[2]]
 
-    trans_com_other = []
-    trans_net_other = []
-    trans_org_other = []
-    trans_info_other = []
-    trans_comvn_other = []
-    trans_vn_other = []
+    # trans_com_other = []
+    # trans_net_other = []
+    # trans_org_other = []
+    # trans_info_other = []
+    # trans_comvn_other = []
+    # trans_vn_other = []
 
-    for x in range(0, count_vendor_com_trans):
-        y = x + 3
-        trans_com_other.append(trans_com[y])
+    # for x in range(0, count_vendor_com_trans):
+    #     y = x + 3
+    #     trans_com_other.append(trans_com[y])
 
-    for x in range(0, count_vendor_net_trans):
-        y = x + 3
-        trans_net_other.append(trans_net[y])
+    # for x in range(0, count_vendor_net_trans):
+    #     y = x + 3
+    #     trans_net_other.append(trans_net[y])
 
-    for x in range(0, count_vendor_org_trans):
-        y = x + 3
-        trans_org_other.append(trans_org[y])
+    # for x in range(0, count_vendor_org_trans):
+    #     y = x + 3
+    #     trans_org_other.append(trans_org[y])
 
-    for x in range(0, count_vendor_info_trans):
-        y = x + 3
-        trans_info_other.append(trans_info[y])
+    # for x in range(0, count_vendor_info_trans):
+    #     y = x + 3
+    #     trans_info_other.append(trans_info[y])
 
-    for x in range(0, count_vendor_comvn_trans):
-        y = x + 3
-        trans_comvn_other.append(trans_comvn[y])
+    # for x in range(0, count_vendor_comvn_trans):
+    #     y = x + 3
+    #     trans_comvn_other.append(trans_comvn[y])
 
-    for x in range(0, count_vendor_vn_trans):
-        y = x + 3
-        trans_vn_other.append(trans_vn[y])
+    # for x in range(0, count_vendor_vn_trans):
+    #     y = x + 3
+    #     trans_vn_other.append(trans_vn[y])
 
     trans_count = [count_vendor_com_trans, count_vendor_net_trans, count_vendor_org_trans, count_vendor_info_trans, count_vendor_comvn_trans, count_vendor_vn_trans]
-    trans_other = [trans_com_other, trans_net_other, trans_org_other, trans_info_other, trans_comvn_other, trans_vn_other]
+    trans_other = [trans_com, trans_net, trans_org, trans_info, trans_comvn, trans_vn]
+    
+    # trans_other = [trans_com_other, trans_net_other, trans_org_other, trans_info_other, trans_comvn_other, trans_vn_other]
 
 #------------------------------------------------------------------------------------------------------------------------------------#
 

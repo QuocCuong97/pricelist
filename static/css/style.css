@@ -489,6 +489,11 @@ li > a {
 li > a:hover {
   color: white;
 }
+
+tr.modal-heading {
+  background-color: #4CAF50;
+  color: white;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -695,6 +700,8 @@ li > a:hover {
     padding: 100px 0 20px 0;
   }
 }
+
+
 #bell {
   position: fixed;
   bottom: 10px;

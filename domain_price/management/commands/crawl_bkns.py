@@ -19,12 +19,12 @@ def get_vn():
     reg_origin = mark_origin.contents[5].contents[0].string.strip(' đ').replace('.', '')
     try:
         dom_sale = get_dom(homepage)
-        reg_promotion = dom_sale.find("p", text=".vn").nextSibling.text.strip('đ/năm').replace('.', '')
+        reg_promotion = int(dom_sale.find("p", text=".vn").nextSibling.text.strip('đ/năm').replace('.', '')) + 10000
     except:
         reg_promotion = reg_origin
     renew_price = mark_origin.contents[6].string.strip(' đ').replace('.', '')
     mark_trans = dom_origin.findAll("u", text=".vn")[1].parent.parent.parent
-    trans_price= mark_trans.contents[4].string.strip(' đ').replace('.', '')
+    trans_price= mark_trans.contents[4].string.strip(' đ').replace('.', '') 
     return [reg_origin, reg_promotion, renew_price, trans_price]
     
 def get_comvn():
@@ -44,61 +44,61 @@ def get_comvn():
 def get_com():
     dom_origin = get_dom(urls)
     mark_origin = dom_origin.find("td", text=".com").parent
-    reg_origin = mark_origin.contents[2].strong.string.replace('.', '')
+    reg_origin = int(mark_origin.contents[2].strong.string.replace('.', '')) * 110 // 100
     try:
         dom_sale = get_dom(homepage)
         mark = dom_sale.find("p", text=".com")
         mark_sibling = mark.nextSibling
-        reg_promotion = mark_sibling.text.strip('đ/năm').replace('.', '')
+        reg_promotion = int(mark_sibling.text.strip('đ/năm').replace('.', '')) * 110 // 100
     except:
         reg_promotion = reg_origin
-    renew_price = mark_origin.contents[3].string.replace('.', '')
-    trans_price = mark_origin.contents[4].string.replace('.', '')
+    renew_price = int(mark_origin.contents[3].string.replace('.', '')) * 110 // 100
+    trans_price = int(mark_origin.contents[4].string.replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_net():
     dom_origin = get_dom(urls)
     mark_origin = dom_origin.find("td", text=".net").parent
-    reg_origin = mark_origin.contents[2].string.replace('.', '')
+    reg_origin = int(mark_origin.contents[2].string.replace('.', '')) * 110 // 100
     try:
         dom_sale = get_dom(homepage)
         mark = dom_sale.find("p", text=".net")
         mark_sibling = mark.nextSibling
-        reg_promotion = mark_sibling.text.strip('đ/năm').replace('.', '')
+        reg_promotion = int(mark_sibling.text.strip('đ/năm').replace('.', '')) * 110 // 100
     except:
         reg_promotion = reg_origin
-    renew_price = mark_origin.contents[3].string.replace('.', '')
-    trans_price = mark_origin.contents[4].string.replace('.', '')
+    renew_price = int(mark_origin.contents[3].string.replace('.', '')) * 110 // 100
+    trans_price = int(mark_origin.contents[4].string.replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_org():
     dom_origin = get_dom(urls)
     mark_origin = dom_origin.find("td", text=".org").parent
-    reg_origin = mark_origin.contents[2].strong.string.replace('.', '')
+    reg_origin = int(mark_origin.contents[2].strong.string.replace('.', '')) * 110 // 100
     try:
         dom_sale = get_dom(homepage)
         mark = dom_sale.find("p", text=".org")
         mark_sibling = mark.nextSibling
-        reg_promotion = mark_sibling.text.strip('đ/năm').replace('.', '')
+        reg_promotion = int(mark_sibling.text.strip('đ/năm').replace('.', '')) * 110 // 100
     except:
         reg_promotion = reg_origin
-    renew_price = mark_origin.contents[3].string.replace('.', '')
-    trans_price = mark_origin.contents[4].string.replace('.', '')
+    renew_price = int(mark_origin.contents[3].string.replace('.', '')) * 110 // 100
+    trans_price = int(mark_origin.contents[4].string.replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_info():
     dom_origin = get_dom(urls)
     mark_origin = dom_origin.find("td", text=".info").parent
-    reg_origin = mark_origin.contents[2].strong.string.replace('.', '')
+    reg_origin = int(mark_origin.contents[2].strong.string.replace('.', '')) * 110 // 100
     try:
         dom_sale = get_dom(homepage)
         mark = dom_sale.find("p", text=".info")
         mark_sibling = mark.nextSibling
-        reg_promotion = mark_sibling.text.strip('đ/năm').replace('.', '')
+        reg_promotion = int(mark_sibling.text.strip('đ/năm').replace('.', '')) * 110 // 100
     except:
         reg_promotion = reg_origin
-    renew_price = mark_origin.contents[3].string.replace('.', '')
-    trans_price = mark_origin.contents[4].string.replace('.', '')
+    renew_price = int(mark_origin.contents[3].string.replace('.', '')) * 110 // 100
+    trans_price = int(mark_origin.contents[4].string.replace('.', '')) * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 

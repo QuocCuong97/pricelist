@@ -13,67 +13,67 @@ source = "iNET"
 def get_vn():
     dom_origin = requests.get(urls).text
     lst_json = json.loads(dom_origin)
-    reg_origin = str(lst_json[0]['lePhiDangKy'] + lst_json[0]['phiDuyTri'] + lst_json[0]['qtdvNamDau'] * 110 // 100)
-    reg_promotion = reg_origin
-    renew_price = str(lst_json[0]['phiDuyTri'] + lst_json[0]['qtdvNamTiepTheo'] * 110 // 100)
-    trans_price = str(lst_json[0]['phiDuyTri'] + lst_json[0]['qtdvNamTiepTheo'] * 110 // 100)
+    reg_origin = lst_json[0]['lePhiDangKy'] + lst_json[0]['phiDuyTri'] + lst_json[0]['qtdvNamDau'] * 110 // 100
+    reg_promotion = lst_json[0]['regPromotion'] + lst_json[0]['renPromotion']
+    renew_price = lst_json[0]['phiDuyTri'] + lst_json[0]['qtdvNamTiepTheo'] * 110 // 100
+    trans_price = lst_json[0]['phiDuyTri'] + lst_json[0]['qtdvNamTiepTheo'] * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_comvn():
     dom_origin = requests.get(urls).text
     lst_json = json.loads(dom_origin)
-    reg_origin = str(lst_json[2]['lePhiDangKy'] + lst_json[2]['phiDuyTri'] + lst_json[2]['qtdvNamDau'] * 110 // 100)
-    reg_promotion = reg_origin
-    renew_price = str(lst_json[2]['phiDuyTri'] + lst_json[2]['qtdvNamTiepTheo'] * 110 // 100)
-    trans_price = str(lst_json[2]['phiDuyTri'] + lst_json[2]['qtdvNamTiepTheo'] * 110 // 100)
+    reg_origin = lst_json[2]['lePhiDangKy'] + lst_json[2]['phiDuyTri'] + lst_json[2]['qtdvNamDau'] * 110 // 100
+    reg_promotion = lst_json[2]['regPromotion'] + lst_json[2]['renPromotion']
+    renew_price = lst_json[2]['phiDuyTri'] + lst_json[2]['qtdvNamTiepTheo'] * 110 // 100
+    trans_price = lst_json[2]['phiDuyTri'] + lst_json[2]['qtdvNamTiepTheo'] * 110 // 100
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_com():
     dom_origin = requests.get(urls).text
     lst_json = json.loads(dom_origin)
-    reg_origin = str(lst_json[1]['regOrigin'])
+    reg_origin = lst_json[1]['regOrigin']
     try:
-        reg_promotion = str(lst_json[1]['regPromotion'])
+        reg_promotion = lst_json[1]['regPromotion']
     except:
         reg_promotion = reg_origin
-    renew_price = str(lst_json[1]['renOrigin'])
-    trans_price = str(lst_json[1]['transferOrigin'])
+    renew_price = lst_json[1]['renOrigin']
+    trans_price = lst_json[1]['transferOrigin']
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_net():
     dom_origin = requests.get(urls).text
     lst_json = json.loads(dom_origin)
-    reg_origin = str(lst_json[5]['regOrigin'])
+    reg_origin = lst_json[5]['regOrigin']
     # try:
     #     reg_promotion = str(lst_json[5]['regPromotion'])
     # except:
     reg_promotion = reg_origin
-    renew_price = str(lst_json[5]['renOrigin'])
-    trans_price = str(lst_json[5]['transferOrigin'])
+    renew_price = lst_json[5]['renOrigin']
+    trans_price = lst_json[5]['transferOrigin']
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_org():
     dom_origin = requests.get(urls).text
     lst_json = json.loads(dom_origin)
-    reg_origin = str(lst_json[6]['regOrigin'])
+    reg_origin = lst_json[6]['regOrigin']
     # try:
     #     reg_promotion = str(lst_json[6]['regPromotion'])
     # except:
     reg_promotion = reg_origin
-    renew_price = str(lst_json[6]['renOrigin'])
-    trans_price = str(lst_json[6]['transferOrigin'])
+    renew_price = lst_json[6]['renOrigin']
+    trans_price = lst_json[6]['transferOrigin']
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 def get_info():
     dom_origin = requests.get(urls).text
     lst_json = json.loads(dom_origin)
-    reg_origin = str(lst_json[9]['regOrigin'])
+    reg_origin = lst_json[9]['regOrigin']
     # try:
     #     reg_promotion = str(lst_json[9]['regPromotion'])
     # except:
     reg_promotion = reg_origin
-    renew_price = str(lst_json[9]['renOrigin'])
-    trans_price = str(lst_json[9]['transferOrigin'])
+    renew_price = lst_json[9]['renOrigin']
+    trans_price = lst_json[9]['transferOrigin']
     return [reg_origin, reg_promotion, renew_price, trans_price]
 
 
