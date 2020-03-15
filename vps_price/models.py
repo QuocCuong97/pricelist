@@ -4,7 +4,7 @@ from domain_price.models import Vendor
 # Create your models here.
 
 
-class VPS(models.Model):
+class Vps(models.Model):
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     pack = models.CharField(max_length=60, null=True)
     vcpu = models.IntegerField(null=True)
@@ -23,6 +23,3 @@ class VPS(models.Model):
     
     def __str__(self):
         return self.vendor.name + ' ' + self.pack
-
-
-    

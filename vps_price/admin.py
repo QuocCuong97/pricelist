@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import VPS
+from .models import Vps
 # Register your models here.
 
 
@@ -21,4 +21,4 @@ class VPSAdmin(admin.ModelAdmin):
         ('Ghi chú', {'fields': ['note']}),
     ]
 
-admin.site.register(VPS, VPSAdmin)
+admin.site.register(Vps, VPSAdmin)

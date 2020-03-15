@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from django.core.management.base import BaseCommand, CommandError
 
 from domain_price.models import Vendor
-from vps.models import VPS
+from vps_price.models import Vps
 
 homepage = "https://hostingviet.vn/"
 urls_1 = "https://hostingviet.vn/vps-starter-gia-re"
@@ -153,34 +153,34 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         def new_pack_1():
             lst = get_pack_1()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_3': lst[4], 'price_6': lst[5], 'price_12': lst[6], 'link': lst[7]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_3': lst[4], 'price_6': lst[5], 'price_12': lst[6], 'link': lst[7]})
         def new_pack_2():
             lst = get_pack_2()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_3': lst[4], 'price_6': lst[5], 'price_12': lst[6], 'link': lst[7]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_3': lst[4], 'price_6': lst[5], 'price_12': lst[6], 'link': lst[7]})
         def new_pack_3():
             lst = get_pack_3()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_4():
             lst = get_pack_4()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_5():
             lst = get_pack_5()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_6():
             lst = get_pack_6()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_7():
             lst = get_pack_7()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_8():
             lst = get_pack_8()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_9():
             lst = get_pack_9()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         def new_pack_10():
             lst = get_pack_10()
-            new_object = VPS.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
+            new_object = Vps.objects.update_or_create(vendor=Vendor.objects.get(name='HostingViet'), pack=lst[0], defaults = {'vcpu': lst[1], 'ssd': lst[2], 'ram': lst[3], 'price_1': lst[4], 'price_3': lst[5], 'price_6': lst[6], 'price_12': lst[7], 'link': lst[8]})
         
         
         new_pack_1()

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'domain_price',
     'ssl_price',
     'hosting_price',
-    'vps',
+    'vps_price',
 ]
 
 MIDDLEWARE = [
