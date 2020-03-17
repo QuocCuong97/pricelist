@@ -1,5 +1,6 @@
-from django import template
+import re
 
+from django import template
 
 register = template.Library()
 
@@ -14,5 +15,12 @@ def currency(value):
         pass
     return result
 
+def ram(value):
+    value = float(value)
+    if value < 1:
+        value = str(round(1024 * value)) + ' MB'
+    value = str(value).replace('.0', '')
+    return value
 
 register.filter('currency', currency)
+register.filter('ram', ram)

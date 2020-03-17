@@ -20,10 +20,7 @@
   <!-- Bootstrap CSS File -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+  
   <!-- Libraries CSS Files -->
   <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
@@ -31,12 +28,14 @@
   <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 
+
+  
   <!-- Main Stylesheet File -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
   <!-- Custom JavaScript -->
   <script src="{% static 'js/custom.js' %}"></script>
-
+  
 </head>
 
 <body>
@@ -60,6 +59,7 @@
     <div class="container text-center">
       <div class="intro-info">
         <h2>Bảng giá<br>Domain - Hosting - SSL</h2>
+        
         <!-- <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
@@ -195,7 +195,15 @@
   <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
   <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
+  <script src = "https://code.jquery.com/jquery-1.12.1.js"></script>
+  <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  {% block javascript %}
+  {% endblock %}
+  
   <!-- Template Main Javascript File -->
   <script src="{% static 'js/main.js' %}"></script>
 
