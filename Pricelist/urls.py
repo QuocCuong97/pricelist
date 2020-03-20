@@ -18,8 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('domain_price.urls')),
-    path('ssl/', include('ssl_price.urls')),
-    path('hosting/', include('hosting_price.urls')),
-    path('vps/', include('vps_price.urls')),
+    path('', include('domain.urls')),
+    path('ssl/', include('ssls.urls')),
+    path('hosting/', include('hosting.urls')),
+    path('vps/', include('vps.urls')),
 ]

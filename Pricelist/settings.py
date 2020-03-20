@@ -36,10 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'domain_price',
-    'ssl_price',
-    'hosting_price',
-    'vps_price',
+    'domain',
+    'ssls',
+    'hosting',
+    'vps',
 ]
 
 MIDDLEWARE = [
