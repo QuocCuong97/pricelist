@@ -176,3 +176,7 @@ def index(request):
     return render(request, 'domain/domain.html', {'lst_cheapest': lst_cheapest, 'lst_second': lst_second, 'lst_third': lst_third, 'lst_other': lst_other, 'lst_count': lst_count,
      'ren_cheapest': ren_cheapest, 'ren_second': ren_second, 'ren_third': ren_third, 'ren_other': ren_other, 'ren_count': ren_count,
       'trans_cheapest': trans_cheapest, 'trans_second': trans_second, 'trans_third': trans_third, 'trans_other': trans_other, 'trans_count': trans_count})
+
+
+def search(request):
+    return render(request, 'domain/domain.html')
