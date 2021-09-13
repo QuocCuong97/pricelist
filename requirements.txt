@@ -4,5 +4,4 @@ html5lib
 ipython
 ipython-genutils
 pylint
-request
 requests
