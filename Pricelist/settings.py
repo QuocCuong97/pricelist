@@ -24,7 +24,7 @@ SECRET_KEY = '+^0z+(gxc*d-$*jri_ax)i-hjy5383nt!l4$6%@4&8l8-^qp15'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pricelist-test-self.apps.lab.okd.fis.vn']
 
 
 # Application definition
