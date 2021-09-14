@@ -6,5 +6,6 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+ENV ALLOWED_HOSTS localhost 127.0.0.1
 
+EXPOSE 80
