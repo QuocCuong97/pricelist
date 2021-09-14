@@ -6,6 +6,6 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-ENV ALLOWED_HOSTS $(hostname -i)
+ENV ALLOWED_HOSTS "$(hostname -i)"
 
 EXPOSE 80
