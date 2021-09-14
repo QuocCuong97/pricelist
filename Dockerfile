@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt
 
 ARG HOST_IP
 
-RUN echo $(hostname -i) > HOST_IP
+RUN echo $(hostname -i) > ${HOST_IP}
 
 ENV ALLOWED_HOSTS ${HOST_IP}
 
