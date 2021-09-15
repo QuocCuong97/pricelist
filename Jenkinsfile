@@ -17,8 +17,6 @@ pipeline{
                 }
             }
         }
-    }
-    stages{
         stage("Clear old version"){
             steps{
                 echo "Running source code in a fully containerized environment..."
@@ -36,8 +34,6 @@ pipeline{
                 }
             }
         }
-    }
-    stages{
         stage("Deploy Source Code"){
             steps{
                 echo "Running source code in a fully containerized environment..."    
