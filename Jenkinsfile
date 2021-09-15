@@ -1,11 +1,6 @@
 pipeline{
     agent any
     stages {
-        stage('Clone repository') {
-            steps {
-                checkout master
-            }
-        }
         stage('Clear old version') {
             steps {
                 echo "Running source code in a fully containerized environment..."
