@@ -1,9 +1,9 @@
 pipeline{
     agent any
     stages {
-        stage('Clear old version') {
+        stage('Clear Old Version') {
             steps {
-                echo "Running source code in a fully containerized environment..."
+                echo "Removing old containerized environment..."
                 sh '/usr/local/bin/docker-compose down -v'
             }
         }
